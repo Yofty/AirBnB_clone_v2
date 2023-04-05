@@ -15,11 +15,10 @@ class FileStorage:
         cls_name = cls.__name__
         dct = {}
         for key in self.__objects.keys():
-            if key.split('.'[0] == cls_name:
-                    dct[key] = self.__objects[key]
-
+            if key.split('.')[0] == cls_name:
+                dct[key] = self.__objects[key]
         return dct
-    
+
     def new(self, obj):
         """Adds new object to storage dictionary"""
         self.__objects.update(
@@ -32,7 +31,7 @@ class FileStorage:
             temp = {}
             temp.update(self.__objects)
             for key, val in temp.items():
-                temp[key] = val.to_dict()
+            temp[key] = val.to_dict()
             json.dump(temp, f)
 
     def reload(self):
