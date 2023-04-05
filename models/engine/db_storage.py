@@ -82,7 +82,7 @@ class DBStorage:
         '''reloads trhe database'''
         Base.metadata.create_all(self.__engine)
         session_factory = sessionmaker(bind=self._engine,
-                 expire_on_commit=False)
+                                       expire_on_commit=False)
         self.__session = scoped_session(session_factory)()
 
     def close(self):
